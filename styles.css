@@ -1,0 +1,122 @@
+html {
+  font-size: 10px;
+  background: url(http://jdrachel.com/wp-content/uploads/2016/01/rock-concert.jpg) bottom center ;
+  background-size: cover;
+}
+
+body,html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.keys {
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.drum-layout {
+  max-width: 650px;
+  margin: 0 auto;
+  background-color: transparent;
+}
+
+.buffer {
+  min-height: 100px;
+}
+
+.key {
+  border: .4rem solid red;
+  border-radius: 50%;
+  margin: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem .5rem;
+  transition: all .09s ease;
+  width: 10rem;
+  text-align: center;
+  color: white;
+  background: rgba(0,0,0,0.4);
+  text-shadow: 0 0 .5rem black;
+}
+
+.playing {
+  transform: scale(1.1);
+  border-color: #ffc600;
+  box-shadow: 0 0 1rem #ffc600;
+}
+
+kbd {
+  display: block;
+  font-size: 4rem;
+}
+
+.sound {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  color: #ffc600;
+}
+
+.base {
+  background-color: transparent;
+  display: flex;
+  margin: 0 auto;
+  margin-right: 140px;
+  max-width: 280px;
+  min-height: 140px;
+}
+
+.snare {
+  background-color: transparent;
+  display: flex;
+  margin-left: 250px;
+  max-width: 310px;
+}
+
+.j-kick {
+  position: relative;
+  bottom: 35px;
+  right: 18px;
+}
+
+.tom {
+  position: relative;
+  right: 35px;
+  bottom: 5px;
+}
+
+.cymbols {
+  background-color: transparent;
+  display: flex;
+  margin-left: 210px;
+  max-width: 310px;
+}
+
+.hihat {
+  position: relative;
+  bottom: 40px;
+  right: 10px;
+}
+
+.openhat {
+  position: relative;
+  bottom: ;
+  right: 20px;
+}
+
+.specialty {
+  background-color: transparent;
+  margin-left: 110px;
+  max-width: 130px;
+  float: left;
+  display: flex;
+}
+
+.tink, .clap {
+  width: 4rem !important;
+}
+
+.tink {
+  margin-bottom: 40px;
+}

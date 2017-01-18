@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Drum Kit</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="keys drum-layout">
+    <div class="buffer">
+    </div>
+    <div class="cymbols">
+      <div data-key="82" class="key">
+        <kbd>R</kbd>
+        <span class="sound">ride</span>
+      </div>
+      <div data-key="84" class="key hihat">
+        <kbd>T</kbd>
+        <span class="sound">hihat</span>
+      </div>
+      <div data-key="89" class="key openhat">
+        <kbd>Y</kbd>
+        <span class="sound">openhat</span>
+      </div>
+    </div>
+    <div class="specialty">
+      <div data-key="72" class="key tink">
+        <kbd>H</kbd>
+        <span class="sound">tink</span>
+      </div>
+      <div data-key="70" class="key clap">
+        <kbd>F</kbd>
+        <span class="sound">clap</span>
+      </div>
+    </div>
+    <div class="snare">
+      <div data-key="71" class="key">
+        <kbd>G</kbd>
+        <span class="sound">snare</span>
+      </div>
+      <div data-key="74" class="key j-kick">
+        <kbd>J</kbd>
+        <span class="sound">kick</span>
+      </div>
+      <div data-key="75" class="key tom">
+        <kbd>K</kbd>
+        <span class="sound">tom</span>
+      </div>
+    </div>
+    <div class="base">
+      <div data-key="66" class="key l-base">
+        <kbd>B</kbd>
+        <span class="sound">base</span>
+      </div>
+      <div data-key="78" class="key r-base">
+        <kbd>N</kbd>
+        <span class="sound">base</span>
+      </div>
+    </div>
+  </div>
+
+  <audio data-key="70" src="sounds/clap.wav"></audio>
+  <audio data-key="84" src="sounds/hihat.wav"></audio>
+  <audio data-key="74" src="sounds/kick.wav"></audio>
+  <audio data-key="89" src="sounds/openhat.wav"></audio>
+  <audio data-key="66" src="sounds/boom.wav"></audio>
+  <audio data-key="78" src="sounds/boom.wav"></audio>
+  <audio data-key="82" src="sounds/ride.wav"></audio>
+  <audio data-key="71" src="sounds/snare.wav"></audio>
+  <audio data-key="75" src="sounds/tom.wav"></audio>
+  <audio data-key="72" src="sounds/tink.wav"></audio>
+
+<script>
+  function playSound(e) {
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+    if(!audio)return; // stops function from running.
+
+    key.classList.add('playing');
+    audio.currentTime = 0; // rewinds the sound file to the start.
+    audio.play();
+  };
+
+  function removeTransition(e) {
+    if(e.propertyName !== 'transform') return; // skip if not a transform
+    this.classList.remove('playing');
+  };
+
+  const keys = Array.from(document.querySelectorAll('.key'));
+  keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+  window.addEventListener('keydown', playSound);
+</script>
+
+</body>
+</html>
