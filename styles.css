@@ -33,7 +33,7 @@ body,html {
   font-size: 1.5rem;
   padding: 1rem .5rem;
   transition: all .09s ease;
-  width: 10rem;
+  width: 160px;
   text-align: center;
   color: white;
   background: rgba(0,0,0,0.4);
@@ -63,7 +63,7 @@ kbd {
   display: flex;
   margin: 0 auto;
   margin-right: 140px;
-  max-width: 280px;
+  max-width: 300px;
   min-height: 140px;
 }
 
@@ -101,8 +101,9 @@ kbd {
 
 .openhat {
   position: relative;
-  bottom: ;
+  bottom: 5px;
   right: 20px;
+  padding: 10px;
 }
 
 .specialty {
@@ -118,5 +119,5 @@ kbd {
 }
 
 .tink {
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 }
